@@ -1,0 +1,48 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.container {
+  margin: auto;
+  max-width: 90%;
+  margin-bottom: 8rem;
+}
+
+.head {
+  &__heading {
+    color: $color-primary;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  &__container {
+    border-radius: 5px;
+    padding-bottom: 1rem;
+    flex: 0 0 24%;
+    background-color: #d9d9d9;
+  }
+
+  &__image {
+  }
+
+  &__details {
+    padding: 1rem;
+  }
+
+  &__heading {
+    color: $color-primary;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__desc {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: $color-primaryBg;
+  }
+}

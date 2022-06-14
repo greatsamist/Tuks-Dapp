@@ -1,0 +1,21 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+  gap: 1.2rem;
+}
+
+.items {
+  color: $color-primary;
+  font-weight: 600;
+  font-size: 1.4rem;
+  line-height: 22px;
+
+  &:hover {
+    color: $color-white;
+    cursor: pointer;
+  }
+}

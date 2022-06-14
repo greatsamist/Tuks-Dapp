@@ -1,0 +1,51 @@
+.events {
+  background-color: rgba(42, 37, 101, 0.4);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+  // gap: 1rem;
+  margin-bottom: 8rem;
+}
+
+.event {
+  flex: 0 0 24%;
+  margin: auto;
+  padding: 1rem;
+  background-color: rgba(42, 37, 101, 0.4);
+  border-radius: 5px;
+
+  &__head {
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    font-size: 1.2rem;
+    color: #4eba44;
+  }
+
+  &__time {
+    font-weight: 300;
+  }
+
+  &__img {
+    margin: 1rem 0;
+  }
+
+  &__btn {
+    font-family: inherit;
+    font-size: inherit;
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    background-color: #4eba44;
+    border-radius: 5px;
+    border: none;
+    line-height: 22px;
+    color: #ffffff;
+  }
+}
