@@ -29,7 +29,7 @@ export default function Header() {
         <div className={styles.account}>
           {wallet ? (
             <button
-              className={`${btn.btn} ${btn.btn__cursor} ${btn.btn__animated} ${btn.btn__transparent}`}
+              className={`${btn.btn} ${btn.btn__cursor} ${btn.btn__animated}`}
             >
               {shortenWalletAddress(wallet.address, 6)}
             </button>
@@ -38,14 +38,14 @@ export default function Header() {
           )}
           <div className={styles.header__connect}>
             {!wallet ? (
-              <button onClick={connect} className={`${btn.btn} `}>
+              <button
+                onClick={connect}
+                className={`${btn.btn} ${btn.btn__animated} ${btn.btn__primary} `}
+              >
                 Connect Wallet
               </button>
             ) : (
-              <button
-                onClick={disconnect}
-                className={`${btn.btn} ${btn.btn__animated} ${btn.btn__transparent}`}
-              >
+              <button onClick={disconnect} className={`${btn.btn}`}>
                 Disconnect
               </button>
             )}

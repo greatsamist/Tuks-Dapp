@@ -29,6 +29,7 @@
     color: #fff;
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 3px;
+    margin-bottom: 1rem;
 
     &:hover,
     &:focus {
@@ -39,6 +40,13 @@
     &:active {
       border: 1px solid rgb(145, 126, 255, 0.3);
     }
+  }
+
+  &__option {
+    font-family: inherit;
+    // font-size: inherit;
+    width: 100%;
+    padding: 1rem;
   }
 
   &__desc {
@@ -63,8 +71,13 @@
     color: #fff;
     font-family: inherit;
     padding: 2rem;
-    height: 15rem;
+    height: 12rem;
     border-radius: 3px;
     background: rgba(42, 37, 101, 0.4);
+  }
+
+  &__btn {
+    margin: auto;
+    margin-top: 4rem;
   }
 }
