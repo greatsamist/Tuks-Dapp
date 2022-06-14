@@ -1,0 +1,15 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.container {
+  margin: auto;
+  max-width: 90%;
+}
+
+.head {
+  &__heading {
+    color: $color-primary;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+}
