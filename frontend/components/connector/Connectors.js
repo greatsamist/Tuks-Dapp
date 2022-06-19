@@ -31,7 +31,7 @@ export const providerOptions = {
   coinbasewallet: {
     package: CoinbaseWalletSDK, // Required
     options: {
-      appName: "Clubry", // Required
+      appName: "tuks", // Required
       // infuraId: "630e61a016f845e58b198597976a9d12", // Required
       rpc: "https://polygon-mumbai.g.alchemy.com/v2/7reUbWVPxaHZ9aNB-U-qoba4DXNF7Hxr", // Optional if `infuraId` is provided; otherwise it's required
       chainId: 80001, // Optional. It defaults to 1 if not provided
