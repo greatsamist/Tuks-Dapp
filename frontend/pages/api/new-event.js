@@ -10,15 +10,15 @@ async function handler(req, res) {
 
     const db = client.db();
 
-    const donationCollection = db.collection("donations");
-    const result = await donationCollection.insertOne(data);
+    const ticketCollection = db.collection("tickets");
+    const result = await ticketCollection.insertOne(data);
 
     console.log(result);
 
     client.close();
 
     // 201 indicate successful addiction
-    res.status(201).json({ message: "Donation inserted" });
+    res.status(201).json({ message: "Event inserted" });
   }
 }
 
