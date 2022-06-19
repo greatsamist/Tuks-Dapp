@@ -37,7 +37,7 @@ export const connector = async (UAuth, opts) => {
 
       // NOTE: We don't want to throw because the page will take some time to
       // load the redirect page.
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
+
       await new Promise(() => {});
       // We need to throw here otherwise typescript won't know that user isn't null.
       throw new Error("Should never get here.");
