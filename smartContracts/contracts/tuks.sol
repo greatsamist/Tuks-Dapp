@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0
 pragma solidity ^0.8.8;
 
 
@@ -16,10 +17,19 @@ contract EventFactory {
         uint48 ticketTransferDate;
     }
 
+    struct AllEvents {
+        address creatorAddress;
+        uint128 ticketAmount;
+        uint128 maxParticipant;
+    }
+
+    uint256 public index;
+
     struct EventStatus {
         uint32 totalParticipants;
     }
 
+    mapping(uint256 => AllEvents) allEventCreator;
     mapping(uint256 => EventStatus) eventStatus;
     mapping(uint256 => mapping(uint256=> EventTracker)) eventTracker;
 
@@ -62,6 +72,14 @@ contract EventFactory {
             c.datePurchased = i_.datePurchased;
             c.participantAddress = i_.participantAddress;
         }
+    }
+
+    function createEvent(uint128 maxNumberOfParticipants, uint128 _amount) public {
+        AllEvents storage all = allEventCreator[index];
+        all.creatorAddress = msg.sender;
+        all.maxParticipant = maxNumberOfParticipants;
+        all.ticketAmount = _amount;
+        index = index + 1;
     }
 
     // function checkParticipantStatus(uint256 _evenTag, uint256 _eventId) public view returns(bool) {
