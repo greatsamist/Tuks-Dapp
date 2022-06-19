@@ -63,7 +63,7 @@ function Create() {
 
       //////////////////////////////////////////////////
       // Sending data to our backend
-      const response = await fetch("/api/new-donation", {
+      const response = await fetch("/api/new-event", {
         method: "POST",
         body: JSON.stringify(pushIdData),
         headers: {
@@ -77,7 +77,7 @@ function Create() {
       alert("Event created successfully");
       setSubmitting(false);
       e.target.reset();
-      router.push("/donate");
+      // router.push("/tickets");
     } catch (error) {
       console.error(error);
     }
