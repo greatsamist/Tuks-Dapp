@@ -41,17 +41,17 @@ contract EventFactory {
         all.creatorAddress = msg.sender;
         all.maxParticipants = maxNumberOfParticipants;
         all.ticketAmount = _amount;
-        index = index + 1;
         emit CreateEvent(index);
+        index = index + 1;
     }
 
     function buyTicket(uint256 _eventId) public payable{
         AllEvents storage _event = allEvents[_eventId];
 
-        if(_event.ticketAmount != msg.value) revert InsufficentBalance();
+        if(_event.ticketAmount < msg.value) revert InsufficentBalance();
         uint48 _currentTag = _event.registeredParticipants + 1;
         _event.registeredParticipants = _currentTag;
-        _event.amoutPaid = msg.value;
+        _event.amoutPaid += msg.value;
         EventTracker storage i_ = eventTracker[_eventId][_currentTag];
         i_.datePurchased = uint40(block.timestamp);
         i_.participantAddress = msg.sender;
