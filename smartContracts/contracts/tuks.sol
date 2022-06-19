@@ -7,45 +7,56 @@ contract EventFactory {
     error NotTicketOwner();
     error NotRegistered();
     error CheckedIn();
+    error InsufficentBalance();
 
     struct EventTracker {
-        bool ticketTransferStatus;
-        bool eventCheckInStatus;
-        uint32 eventTag;
+        uint48 eventTag;
         uint48 datePurchased;
         address participantAddress;
-        uint48 ticketTransferDate;
+        bool ticketTransferStatus;
+        bool eventCheckInStatus;
+        uint40 ticketTransferDate;
     }
 
     struct AllEvents {
         address creatorAddress;
-        uint128 ticketAmount;
-        uint128 maxParticipant;
+        uint48 maxParticipants;
+        uint48 registeredParticipants;
+        uint256 ticketAmount;
+        uint256 amoutPaid;
     }
 
     uint256 public index;
 
-    struct EventStatus {
-        uint32 totalParticipants;
-    }
-
-    mapping(uint256 => AllEvents) allEventCreator;
-    mapping(uint256 => EventStatus) eventStatus;
+    mapping(uint256 => AllEvents) public allEvents;
     mapping(uint256 => mapping(uint256=> EventTracker)) eventTracker;
 
+    event CreateEvent(uint256 eventId);
     event EventCheckIn(uint256 _eventId, address participantAddress, bool eventCheckInStatus);
-    event PurchasedTicket(uint256 eventId, address participantAddress, uint32 currentTag);
-    event TransferTicketOwnership(uint256 eventId, address participantAddress, uint32 eventTag);
+    event PurchasedTicket(uint256 eventId, address participantAddress, uint48 currentTag);
+    event TransferTicketOwnership(uint256 eventId, address participantAddress, uint48 eventTag);
 
-    function buyTicket(uint256 _eventId, address _address) public{
-        EventStatus storage _event = eventStatus[_eventId];
-        uint32 _currentTag = _event.totalParticipants + 1;
-        _event.totalParticipants = _currentTag;
+    function createEvent(uint48 maxNumberOfParticipants, uint256 _amount) public {
+        AllEvents storage all = allEvents[index];
+        all.creatorAddress = msg.sender;
+        all.maxParticipants = maxNumberOfParticipants;
+        all.ticketAmount = _amount;
+        index = index + 1;
+        emit CreateEvent(index);
+    }
+
+    function buyTicket(uint256 _eventId) public payable{
+        AllEvents storage _event = allEvents[_eventId];
+
+        if(_event.ticketAmount != msg.value) revert InsufficentBalance();
+        uint48 _currentTag = _event.registeredParticipants + 1;
+        _event.registeredParticipants = _currentTag;
+        _event.amoutPaid = msg.value;
         EventTracker storage i_ = eventTracker[_eventId][_currentTag];
         i_.datePurchased = uint40(block.timestamp);
-        i_.participantAddress = _address;
+        i_.participantAddress = msg.sender;
         ++i_.eventTag;
-        emit PurchasedTicket(_eventId, _address, _currentTag);
+        emit PurchasedTicket(_eventId, msg.sender, _currentTag);
     }
 
     function checkInEventAttendees(uint256 _eventId, address _address, uint32 _eventTag) public {
@@ -56,9 +67,9 @@ contract EventFactory {
         emit EventCheckIn(_eventId, _address, true);
     }
 
-    function transferTicketOwnership(uint256 _eventId, address _ownerAddress, address _newAddress, uint32 _eventTag) public {
+    function transferTicketOwnership(uint256 _eventId, address _newAddress, uint32 _eventTag) public {
         EventTracker storage i_ = eventTracker[_eventId][_eventTag];
-        if(_ownerAddress != i_.participantAddress) revert NotTicketOwner();
+        if(msg.sender != i_.participantAddress) revert NotTicketOwner();
         i_.participantAddress = _newAddress;
         i_.ticketTransferDate = uint40(block.timestamp);
         emit TransferTicketOwnership(_eventId, _newAddress, _eventTag);
@@ -73,16 +84,4 @@ contract EventFactory {
             c.participantAddress = i_.participantAddress;
         }
     }
-
-    function createEvent(uint128 maxNumberOfParticipants, uint128 _amount) public {
-        AllEvents storage all = allEventCreator[index];
-        all.creatorAddress = msg.sender;
-        all.maxParticipant = maxNumberOfParticipants;
-        all.ticketAmount = _amount;
-        index = index + 1;
-    }
-
-    // function checkParticipantStatus(uint256 _evenTag, uint256 _eventId) public view returns(bool) {
-    //        EventTracker storage i_ = eventTracker[_eventId][_eventTag];
-    // }
 }
