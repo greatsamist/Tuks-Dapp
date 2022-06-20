@@ -1,13 +1,21 @@
+import AuctionedTickets from "../components/Auctioned/AuctionedTickets";
+import YourTickets from "../components/YourTickets/YourTickets";
+
 import { MongoClient } from "mongodb";
 import TicketsList from "../components/Donate/DonateList";
 
 function Tickets(props) {
   return (
     <div>
-      <TicketsList ticketsData={props.ticketsData} />
+      <YourTickets />
+      <AuctionedTickets />
+     <TicketsList ticketsData={props.ticketsData} />
     </div>
   );
-}
+};
+
+export default Tickets;
+
 
 export async function getStaticProps() {
   const client = await MongoClient.connect(process.env.MongoURi);
@@ -36,4 +44,4 @@ export async function getStaticProps() {
   };
 }
 
-export default Tickets;
+

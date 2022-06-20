@@ -1,0 +1,47 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.container {
+  padding: 2rem 5rem;
+  h4 {
+    color: $color-primary;
+    font-size: 18px;
+  }
+  .wrapper {
+    background-color: $color-primaryBg;
+    .flex {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 1rem 0;
+      p {
+        margin: 0 4rem;
+      }
+    }
+
+    .event__flex {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 1rem 0rem;
+      //   p:nth-child(2) {
+      //     margin-left: 45px;
+      //   }
+      //   p:nth-child(3) {
+      //     margin-left: 80px;
+      //   }
+      //   p:nth-child(4) {
+      //     margin-left: 40px;
+      //   }
+      p {
+        margin: 0 7.7rem;
+      }
+      .btn {
+        background-color: #429f5c;
+        padding: 1rem 3rem;
+        border-radius: 5px;
+      }
+    }
+  }
+}

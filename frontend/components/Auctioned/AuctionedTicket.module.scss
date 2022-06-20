@@ -1,0 +1,32 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.container {
+  padding: 2rem 5rem;
+  h4 {
+    color: $color-primary;
+    font-size: 18px;
+  }
+  .wrapper {
+    background-color: $color-primaryBg;
+    .flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 1rem 2rem;
+    }
+
+    .event__flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      .btn {
+        background-color: #429f5c;
+        padding: 1rem 3rem;
+        border-radius: 5px;
+      }
+    }
+  }
+}
