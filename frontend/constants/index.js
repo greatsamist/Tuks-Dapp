@@ -1,10 +1,8 @@
-const FactoryAddr = "0xad4511722d4C47B713B123738D22bbb4aedae667";
+const tuksAddr = "0x0Af42EBC5c1Db8d8dC66EC3c47D18dD4580B7509";
 
-const clubryAbi = require("./ClubryAbi.json");
-const FactoryAbi = require("./FactoryAbi.json");
+const FactoryAbi = require("./tuksContractAbi.json");
 
 module.exports = {
-  FactoryAddr,
-  FactoryAbi,
-  clubryAbi,
+  tuksAddr,
+  tuksContractAbi,
 };

@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./CreateForm.module.scss";
 import btn from "../../styles/button.module.scss";
 
-function CreateForm() {
+function CreateForm({ onClickCreate, submitting, completed }) {
   return (
     <div className={styles.container}>
-      <form className={styles.form}>
+      <form className={styles.form} onSubmit={onClickCreate}>
         <div className={styles.form__create}>
           <p className={styles.form__head}>Fill details appropriately</p>
           <input
@@ -17,24 +17,15 @@ function CreateForm() {
             placeHolder="Name of event"
           />
           {/* ///////////////////// */}
-          <select required className={styles.form__input} name="token">
-            <option className={styles.form__option}>
-              Select Token to stake
-            </option>
-            <option value="option1" id="op1" className={styles.li}>
-              Zarel Tokens
-            </option>
-          </select>
           {/* ////////////////// */}
-          <select required className={styles.form__input} name="token">
-            <option className={styles.form__option}>Event type</option>
-            <option value="option1" id="op1" className={styles.li}>
-              Online
-            </option>
-            <option value="option1" id="op1" className={styles.li}>
-              Offline
-            </option>
-          </select>
+          <input
+            className={styles.form__input}
+            required
+            name="eventType"
+            id="eventType"
+            type="text"
+            placeHolder="Event Type"
+          />
           {/* ///////////// */}
           <input
             className={styles.form__input}
@@ -63,6 +54,15 @@ function CreateForm() {
             type="number"
             placeHolder="Maximum number of participants"
           />
+          {/* //////////////////////// */}
+          <input
+            className={styles.form__input}
+            required
+            name="amount"
+            id="amount"
+            type="number"
+            placeHolder="Ticket price"
+          />
           {/* ////////////////////// */}
           Start Time
           <input
@@ -74,6 +74,14 @@ function CreateForm() {
             placeHolder="Start time"
           />
           {/* ///////////////////// */}
+          Image(url)
+          <input
+            className={styles.form__input}
+            required
+            name="image"
+            id="image"
+            type="url"
+          />
           End Time
           <input
             className={styles.form__input}
@@ -88,10 +96,18 @@ function CreateForm() {
         <div className={styles.form__desc}>
           <textarea
             className={styles.form__full}
+            required
+            name="desc"
+            id="desc"
+            type="text"
             placeHolder="Enter Description, explain in details"
           />
           <textarea
             className={styles.form__short}
+            required
+            name="Shortdesc"
+            id="Shortdesc"
+            type="text"
             placeHolder="Give a brief description, make it catchy"
           />
         </div>
