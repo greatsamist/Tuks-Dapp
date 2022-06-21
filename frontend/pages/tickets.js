@@ -17,9 +17,9 @@ function Tickets(props) {
 export default Tickets;
 
 export async function getStaticProps() {
-  const client = await MongoClient.connect(process.env.MongoURi);
+  const client = MongoClient.connect(process.env.MongoURi);
 
-  const db = client.db();
+  const db = await client.db();
 
   const ticketCollection = db.collection("tickets");
 

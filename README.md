@@ -31,6 +31,7 @@ Tuks is a decentralized ticketing app.
 - [IPFS](https://ipfs.io)
 - [Coinbase](https://coinbase.com)
 - [Wallet Connect](https://walletconnect.com)
+- [Unstoppable Domains](https://unstoppabledomains.com)
 - [MongoDb](https://mongodb.com)
 
 # Getting Started
