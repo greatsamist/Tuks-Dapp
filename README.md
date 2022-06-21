@@ -6,13 +6,13 @@ Tuks is a decentralized ticketing app.
 
 ### https://mumbai.polygonscan.com/address/0x0Af42EBC5c1Db8d8dC66EC3c47D18dD4580B7509#code
 
-![Homepage](https://github.com/greatsamist/Tuks-Dapp/blob/master/.docs/homepage.PNG)
+![Homepage](https://github.com/greatsamist/Tuks-Dapp/blob/main/.docs/homepage.png)
 
 ### Features
 
 #### Create an event
 
-![Create](https://github.com/greatsamist/Tuks-Dapp/blob/master/.docs/create.PNG)
+![Create](https://github.com/greatsamist/Tuks-Dapp/blob/main/.docs/create.png)
 
 #### Re-auction tickets
 
