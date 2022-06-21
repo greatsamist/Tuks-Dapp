@@ -16,29 +16,29 @@ function Tickets(props) {
 
 export default Tickets;
 
-export async function getStaticProps() {
-  const client = MongoClient.connect(process.env.MongoURi);
+// export async function getStaticProps() {
+//   const client = MongoClient.connect(process.env.MongoURi);
 
-  const db = await client.db();
+//   const db = await client.db();
 
-  const ticketCollection = db.collection("tickets");
+//   const ticketCollection = db.collection("tickets");
 
-  const ticketsData = await ticketCollection.find().toArray();
+//   const ticketsData = await ticketCollection.find().toArray();
 
-  client.close();
+//   client.close();
 
-  return {
-    props: {
-      ticketsData: ticketsData.map((ticket) => ({
-        name: ticket.name,
-        id: ticket._id.toString(),
-        image: ticket.image,
-        desc: ticket.desc,
-        period: ticket.period,
-        amount: ticket.amount,
-        address: ticket.address,
-      })),
-    },
-    revalidate: 1,
-  };
-}
+//   return {
+//     props: {
+//       ticketsData: ticketsData.map((ticket) => ({
+//         name: ticket.name,
+//         id: ticket._id.toString(),
+//         image: ticket.image,
+//         desc: ticket.desc,
+//         period: ticket.period,
+//         amount: ticket.amount,
+//         address: ticket.address,
+//       })),
+//     },
+//     revalidate: 1,
+//   };
+// }

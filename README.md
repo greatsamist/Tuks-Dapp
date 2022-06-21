@@ -2,6 +2,8 @@
 
 Tuks is a decentralized ticketing app.
 
+# [Live Preview](https://tuks.vercel.app)
+
 # Contract Mumbai Address: 0x0Af42EBC5c1Db8d8dC66EC3c47D18dD4580B7509
 
 ### https://mumbai.polygonscan.com/address/0x0Af42EBC5c1Db8d8dC66EC3c47D18dD4580B7509#code
