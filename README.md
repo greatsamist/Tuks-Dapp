@@ -61,7 +61,7 @@ yarn install
 ### For frontend
 
 ```
-cd  Tuks-Dapp/frontend/clubry
+cd  Tuks-Dapp/frontend
 ```
 
 ```

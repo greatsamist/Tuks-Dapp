@@ -6,9 +6,9 @@ async function handler(req, res) {
   if (req.method === "POST") {
     const data = req.body;
 
-    const client = await MongoClient.connect(process.env.MongoURi);
+    const client =  MongoClient.connect(process.env.MongoURi);
 
-    const db = client.db();
+    const db = await client.db();
 
     const ticketCollection = db.collection("tickets");
     const result = await ticketCollection.insertOne(data);
