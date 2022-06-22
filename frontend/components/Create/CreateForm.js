@@ -2,10 +2,10 @@ import React from "react";
 import styles from "./CreateForm.module.scss";
 import btn from "../../styles/button.module.scss";
 
-function CreateForm({ onClickCreate, submitting, completed }) {
+function CreateForm({ onClickContinue }) {
   return (
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={onClickCreate}>
+      <form className={styles.form} onSubmit={onClickContinue}>
         <div className={styles.form__create}>
           <p className={styles.form__head}>Fill details appropriately</p>
           <input
@@ -14,6 +14,7 @@ function CreateForm({ onClickCreate, submitting, completed }) {
             name="eventName"
             id="eventName"
             type="text"
+            maxLength={32}
             placeHolder="Name of event"
           />
           {/* ///////////////////// */}
@@ -24,18 +25,36 @@ function CreateForm({ onClickCreate, submitting, completed }) {
             name="eventType"
             id="eventType"
             type="text"
-            placeHolder="Event Type"
+            placeHolder="Event Type (e.g online)"
           />
           {/* ///////////// */}
           <input
             className={styles.form__input}
             required
-            name="Organizers"
-            id="Organizers"
+            name="organizers"
+            id="organizers"
             type="text"
             placeHolder="Organizers"
           />
           {/* /////////////// */}
+          <input
+            className={styles.form__input}
+            required
+            name="PartiNum"
+            id="PartiNum"
+            type="number"
+            placeHolder="Maximum number of participants"
+          />
+          {/* ///////////// */}
+          <input
+            className={styles.form__input}
+            required
+            name="category"
+            id="category"
+            type="text"
+            placeHolder="Category"
+          />
+          {/* ////////////////////// */}
           Choose preferred date for the event
           <input
             className={styles.form__input}
@@ -46,24 +65,6 @@ function CreateForm({ onClickCreate, submitting, completed }) {
             placeHolder="Choose event date"
           />
           {/* //////////////////////// */}
-          <input
-            className={styles.form__input}
-            required
-            name="PartiNum"
-            id="PartiNum"
-            type="number"
-            placeHolder="Maximum number of participants"
-          />
-          {/* //////////////////////// */}
-          <input
-            className={styles.form__input}
-            required
-            name="amount"
-            id="amount"
-            type="number"
-            placeHolder="Ticket price"
-          />
-          {/* ////////////////////// */}
           Start Time
           <input
             className={styles.form__input}
@@ -74,14 +75,6 @@ function CreateForm({ onClickCreate, submitting, completed }) {
             placeHolder="Start time"
           />
           {/* ///////////////////// */}
-          Image(url)
-          <input
-            className={styles.form__input}
-            required
-            name="image"
-            id="image"
-            type="url"
-          />
           End Time
           <input
             className={styles.form__input}
@@ -100,6 +93,7 @@ function CreateForm({ onClickCreate, submitting, completed }) {
             name="desc"
             id="desc"
             type="text"
+            minLength={100}
             placeHolder="Enter Description, explain in details"
           />
           <textarea
@@ -108,7 +102,8 @@ function CreateForm({ onClickCreate, submitting, completed }) {
             name="Shortdesc"
             id="Shortdesc"
             type="text"
-            placeHolder="Give a brief description, make it catchy"
+            maxLength={100}
+            placeHolder="Give a brief description, make it catchy. Max 100 words"
           />
         </div>
         <button

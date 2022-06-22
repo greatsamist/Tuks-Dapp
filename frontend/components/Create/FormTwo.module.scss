@@ -1,0 +1,121 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.container {
+  margin: 6rem auto;
+  max-width: 90%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  &__tickets {
+    & button {
+      padding: 1rem;
+      font-family: inherit;
+      font-size: inherit;
+      width: 13rem;
+      border: none;
+      text-align: left;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    &-white {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &-blue {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      color: $color-white;
+      background-color: $color-primary;
+      text-align: right !important;
+    }
+  }
+  &__drop {
+    margin: 2rem 0;
+    padding: 5rem 0;
+    text-align: center;
+    background: rgba(42, 37, 101, 0.4);
+    border-radius: 5px;
+  }
+
+  &__image {
+    margin-bottom: 2rem;
+  }
+
+  &__primary {
+    color: $color-primary;
+  }
+
+  &__others {
+    display: flex;
+    flex-wrap: wrap;
+    // width: 100%;
+    gap: 5%;
+  }
+
+  &__head {
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem;
+  }
+
+  &__box {
+    flex: 0 0 45%;
+    // height: 100%;
+    // width: 100%;
+  }
+
+  &__boxContainer {
+    padding: 2rem;
+    background: rgba(42, 37, 101, 0.4);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+    & p {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__input {
+    font-family: inherit;
+    font-size: 1.2rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: transparent;
+    border-style: none;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    margin-bottom: 1.3rem;
+
+    &:hover,
+    &:focus {
+      background-color: rgb(145, 126, 255, 0.3);
+    }
+
+    &:focus,
+    &:active {
+      border: 1px solid rgb(145, 126, 255, 0.3);
+    }
+  }
+
+  &__termsBox {
+    & input {
+      margin: 1.5rem 1rem 0 0;
+      background: none;
+      border-style: none;
+      border: 1px solid #ffffff;
+    }
+
+    & label {
+    }
+  }
+
+  &__btn {
+    margin: auto;
+    margin-top: 4rem;
+  }
+}

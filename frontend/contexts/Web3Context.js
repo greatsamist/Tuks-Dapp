@@ -1,11 +1,13 @@
 import { useEffect, createContext, useState } from "react";
 import Web3Modal, { CHAIN_DATA_LIST } from "web3modal";
-import { ethers } from "ethers";
+import { Contract, ethers } from "ethers";
 import {
   DEFAULT_CHAIN_ID,
   providerOptions,
 } from "../components/connector/Connectors";
 import { DEFAULT_CHAINS } from "../components/connector/Blockchain";
+
+import { tuksAddr, tuksContractAbi } from "../constants";
 
 export const Web3Context = createContext();
 
@@ -188,6 +190,17 @@ export const Web3Provider = (props) => {
     onDisconnect();
   };
   /////////////////////////////////////////////////////////
+  // Contract Instance
+
+  // const instance = async () => {
+  //   if (!provider) {
+  //     alert("connect wallet to mumbai network and try again");
+  //     await connect();
+  //     return;
+  //   }}
+  const signer = provider?.getSigner();
+  const tuksContractInstance = new Contract(tuksAddr, tuksContractAbi, signer);
+  //////////////////////////
 
   return (
     <Web3Context.Provider
@@ -197,6 +210,7 @@ export const Web3Provider = (props) => {
         connect,
         connectTo,
         disconnect,
+        tuksContractInstance,
       }}
     >
       {children}

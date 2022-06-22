@@ -1,7 +1,7 @@
 import AuctionedTickets from "../components/Auctioned/AuctionedTickets";
 import YourTickets from "../components/YourTickets/YourTickets";
 
-import { MongoClient } from "mongodb";
+// import { MongoClient } from "mongodb";
 // import TicketsList from "../components/Donate/DonateList";
 
 function Tickets(props) {
