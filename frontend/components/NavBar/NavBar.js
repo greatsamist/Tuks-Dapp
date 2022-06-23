@@ -8,8 +8,10 @@ function NavBar() {
       <Link href="./tickets">
         <h4 className={styles.items}>My Tickets</h4>
       </Link>
-      <h4 className={styles.items}>Categories</h4>
-      <h4 className={styles.items}>Contact Us</h4>
+      <Link href="./buy">
+        <h4 className={styles.items}>Buy Ticket</h4>
+      </Link>
+
       <Link href="./create">
         <h4 className={styles.items}>Create event</h4>
       </Link>

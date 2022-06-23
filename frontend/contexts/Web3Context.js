@@ -190,17 +190,21 @@ export const Web3Provider = (props) => {
     onDisconnect();
   };
   /////////////////////////////////////////////////////////
+  // Custom contract Instance
+  const customProvider = new ethers.providers.JsonRpcProvider(
+    "https://matic-mumbai.chainstacklabs.com"
+  );
+
+  const customContractInstance = new Contract(
+    tuksAddr,
+    tuksContractAbi,
+    customProvider
+  );
+
   // Contract Instance
 
-  // const instance = async () => {
-  //   if (!provider) {
-  //     alert("connect wallet to mumbai network and try again");
-  //     await connect();
-  //     return;
-  //   }}
   const signer = provider?.getSigner();
-  const tuksContractInstance = new Contract(tuksAddr, tuksContractAbi, signer);
-  //////////////////////////
+  const contractInstance = new Contract(tuksAddr, tuksContractAbi, signer);
 
   return (
     <Web3Context.Provider
@@ -210,7 +214,8 @@ export const Web3Provider = (props) => {
         connect,
         connectTo,
         disconnect,
-        tuksContractInstance,
+        customContractInstance,
+        contractInstance,
       }}
     >
       {children}
