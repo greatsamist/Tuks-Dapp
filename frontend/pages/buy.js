@@ -1,10 +1,10 @@
-import TicketList from "../components/BuyTicket/TicketList";
+import EventList from "../components/BuyTicket/EventList";
 import { MongoClient } from "mongodb";
 
 function Buy(props) {
   return (
     <div>
-      <TicketList ticketData={props.ticketData} />
+      <EventList ticketData={props.ticketData} />
     </div>
   );
 }
@@ -22,15 +22,14 @@ export async function getStaticProps() {
 
   return {
     props: {
-      donateData: ticketData.map((ticket) => ({
+      ticketData: ticketData.map((ticket) => ({
         eventName: ticket.eventName,
         id: ticket._id.toString(),
         eventId: ticket.id,
-        eventType: ticket.eventType,
+        image: ticket.image,
         organizers: ticket.organizers,
-        category: ticket.category,
+        amount: ticket.amount,
         eventDate: ticket.eventDate,
-        desc: ticket.desc,
         Shortdesc: ticket.Shortdesc,
       })),
     },

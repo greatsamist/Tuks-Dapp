@@ -1,0 +1,11 @@
+@import "../../styles/abstracts/variable.module.scss";
+
+.event {
+  width: 90%;
+  &__heading {
+    font-size: 3rem;
+    & span {
+      color: $color-primary;
+    }
+  }
+}

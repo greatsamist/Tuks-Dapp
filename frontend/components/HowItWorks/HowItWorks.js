@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./HowItWorks.module.scss";
-import brush from "../../public/brush.png";
-import event from "../../public/event.png";
+import events from "../../public/events.jpg";
+import event from "../../public/event.jpg";
+import nft from "../../public/nft.jpg";
+import auction from "../../public/auction.jpg";
 function HowItWorks() {
   return (
     <div className={styles.container}>
@@ -14,7 +16,11 @@ function HowItWorks() {
         {/* ////////////////////// */}
         <div className={styles.card__container}>
           <div className={styles.card__image}>
-            <Image src={brush} width={375} />
+            <img
+              className={styles.card__img}
+              src="./events.jpg"
+              alt="create event"
+            />
           </div>
           <div className={styles.card__details}>
             <h5 className={styles.card__heading}>Create an event</h5>
@@ -30,7 +36,11 @@ function HowItWorks() {
         {/* ////////////////////// */}
         <div className={styles.card__container}>
           <div className={styles.card__image}>
-            <Image src={brush} width={375} />
+            <img
+              className={styles.card__img}
+              src="./auction.jpg"
+              alt="auction"
+            />
           </div>
           <div className={styles.card__details}>
             <h5 className={styles.card__heading}>
@@ -48,7 +58,11 @@ function HowItWorks() {
         {/* ////////////////////// */}
         <div className={styles.card__container}>
           <div className={styles.card__image}>
-            <Image src={event} width={375} />
+            <img
+              className={styles.card__img}
+              src="./event.jpg"
+              alt="manage event"
+            />
           </div>
           <div className={styles.card__details}>
             <h5 className={styles.card__heading}>Manage events</h5>
@@ -64,7 +78,11 @@ function HowItWorks() {
         {/* ////////////////////// */}
         <div className={styles.card__container}>
           <div className={styles.card__image}>
-            <Image src={brush} width={375} />
+            <img
+              className={styles.card__img}
+              src="./nft.jpg"
+              alt="generate nft"
+            />
           </div>
           <div className={styles.card__details}>
             <h5 className={styles.card__heading}>Auto Generate NFT tickets</h5>
