@@ -35,7 +35,20 @@
     gap: 2.5rem;
   }
 
+  &__btn {
+    & span {
+      vertical-align: middle;
+    }
+  }
+
+  &__icon {
+    vertical-align: middle;
+    height: 25px;
+    margin-right: 2rem;
+  }
+
   &__connect {
+    // align-items: center !important;
     margin-right: 4rem;
   }
 

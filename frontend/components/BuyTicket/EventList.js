@@ -1,3 +1,4 @@
+import Events from "../AvailableEvents/Events";
 import AllEvents from "./AllEvents";
 import styles from "./EventList.module.scss";
 

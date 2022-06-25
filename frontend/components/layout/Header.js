@@ -40,13 +40,26 @@ export default function Header() {
             {!wallet ? (
               <button
                 onClick={connect}
-                className={`${btn.btn} ${btn.btn__animated} ${btn.btn__primary} `}
+                className={`${btn.btn} ${btn.btn__animated} ${styles.header__btn} `}
               >
-                Connect Wallet
+                <img
+                  className={styles.header__icon}
+                  src="./wallet.png"
+                  alt="icon"
+                />
+                <span>Connect Wallet</span>
               </button>
             ) : (
-              <button onClick={disconnect} className={`${btn.btn}`}>
-                Disconnect
+              <button
+                onClick={disconnect}
+                className={`${btn.btn} ${styles.header__btn}`}
+              >
+                <img
+                  className={styles.header__icon}
+                  src="./wallet.png"
+                  alt="icon"
+                />
+                <span>Disconnect</span>
               </button>
             )}
           </div>
