@@ -1,58 +1,96 @@
-.events {
-  background-color: rgba(42, 37, 101, 0.4);
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem;
-  // gap: 1rem;
-  margin-bottom: 8rem;
-}
+@import "../../styles/abstracts/variable.module.scss";
 
-.event {
-  flex: 0 0 24%;
-  margin: auto;
-  padding: 1rem;
-  background-color: rgba(42, 37, 101, 0.4);
-  border-radius: 5px;
+.card {
+  &__container {
+    width: 22%;
+    border-radius: 5px;
+    // background-color: #fff;
+    background-color: rgba(42, 37, 101, 0.4);
+    border-radius: 4.42065px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 
-  &__head {
-    font-size: 1.4rem;
-    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      color: $color-primaryBg;
+      background-color: #fff;
+      box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+    }
+  }
+  &__content {
+    padding: 2rem;
   }
 
+  &__heading {
+    color: $color-primary;
+  }
+
+  &__image {
+  }
+
+  &__img {
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+    overflow: hidden;
+  }
   &__details {
     display: flex;
     justify-content: space-between;
   }
 
-  &__price {
-    font-size: 1.2rem;
-    color: #4eba44;
+  &__para {
   }
 
-  &__time {
-    font-weight: 300;
-  }
-
-  &__img {
-    margin: 1rem 0;
+  &__organizers {
+    font-size: 1.3rem;
+    padding: 2rem;
+    text-align: right;
+    font-weight: 600;
   }
 
   &__btn {
     font-family: inherit;
-    font-size: inherit;
-    font-size: 1.3rem;
-    padding: 0.8rem;
-    background-color: #4eba44;
-    border-radius: 5px;
-    border: none;
-    line-height: 22px;
-    color: #ffffff;
+    width: 100%;
+    padding: 1rem;
+    font-weight: 500;
+
+    border-style: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-primary;
+      background-color: $color-primaryBg;
+    }
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .events {
-    display: flex;
-    flex-direction: column;
+@media only screen and (max-width: 1200px) {
+  .card {
+    &__container {
+      width: 30%;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .card {
+    &__container {
+      width: 45%;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    &__container {
+      width: 100%;
+      margin-bottom: 4rem;
+    }
   }
 }
