@@ -58,7 +58,7 @@ export async function getStaticProps(context) {
     props: {
       eventData: {
         id: selectedEventData._id.toString(),
-        eventId: selectedEventData.eventId,
+        eventId: selectedEventData.id,
         eventName: selectedEventData.eventName,
         organizers: selectedEventData.organizers,
         amount: selectedEventData.amount,
