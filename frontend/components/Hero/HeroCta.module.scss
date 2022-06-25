@@ -18,3 +18,22 @@
     gap: 1rem;
   }
 }
+
+@media only screen and (max-width: 700px) {
+  .cta {
+    &__heading {
+      font-size: 2rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .cta {
+    width: 100%;
+    text-align: center;
+
+    &__btn {
+      justify-content: center;
+    }
+  }
+}

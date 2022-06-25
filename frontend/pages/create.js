@@ -65,7 +65,7 @@ function Create() {
 
       let pushData = { ...id, ...formOneData, ...formTwo };
 
-      console.log(pushData);
+      // console.log(pushData);
 
       //////////////////////////////////////////////////
       // Sending data to our backend

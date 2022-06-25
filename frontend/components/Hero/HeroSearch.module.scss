@@ -35,3 +35,13 @@
 .btn {
   width: 100%;
 }
+
+@media only screen and (max-width: 700px) {
+  .heroSearch {
+    width: 100%;
+
+    &__input {
+      margin-bottom: 4rem;
+    }
+  }
+}

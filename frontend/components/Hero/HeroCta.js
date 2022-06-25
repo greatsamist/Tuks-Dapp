@@ -18,11 +18,13 @@ function HeroCta() {
             Create Event
           </button>
         </Link>
-        <button
-          className={`${btn.btn} ${btn.btn__animated} ${btn.btn__primary}`}
-        >
-          Buy Ticket
-        </button>
+        <Link href="./buy">
+          <button
+            className={`${btn.btn} ${btn.btn__animated} ${btn.btn__primary}`}
+          >
+            Buy Ticket
+          </button>
+        </Link>
       </div>
     </div>
   );

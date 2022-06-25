@@ -17,7 +17,7 @@ export default function Header() {
       <div>
         <div className={styles.header__title}>
           {/* <div className={styles.header__logo}>
-          <Image src={logo} alt="Clubry logo" width={68} height={50} />
+          <Image src={logo} alt="Tuks logo" width={68} height={50} />
         </div> */}
           <Link href="./">
             <p className={styles.header__logoText}>TUKS</p>
