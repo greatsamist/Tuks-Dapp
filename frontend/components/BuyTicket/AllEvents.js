@@ -11,10 +11,6 @@ function AllTickets(props) {
     router.push("/" + id);
   }
 
-  if (daysFn(eventDate) === "ended") {
-    return;
-  }
-
   return (
     <div className={styles.card__container} onClick={showDetailsHandler}>
       <div className={styles.card__content}>
